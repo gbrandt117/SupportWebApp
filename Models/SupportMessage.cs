@@ -1,9 +1,11 @@
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace SupportWebApp.Models;
 
 public class SupportMessage
 {
+    [JsonPropertyName("id")]
     public string Id { get; set; } = Guid.NewGuid().ToString();
 
     [Required(ErrorMessage = "Navn er påkrævet")]
